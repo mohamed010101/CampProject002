@@ -45,7 +45,7 @@ public class ActivityType {
     int MaxParticipantNbr;
 
     @OneToMany(mappedBy = "ActiviteType")
-    public Set<Activités> Activites;
+    public Set<Activite> Activites;
     @OneToMany(mappedBy="ActiviteType")
     public Set<Images> ListImages;
 
