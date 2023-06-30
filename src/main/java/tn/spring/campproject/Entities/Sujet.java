@@ -22,6 +22,7 @@ public class Sujet {
     int IdSujet;
 
     String Titre;
+    String Contenu;
 
     Date DateCreationSujet;
 
