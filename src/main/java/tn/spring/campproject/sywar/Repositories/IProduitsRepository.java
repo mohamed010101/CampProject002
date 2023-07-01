@@ -1,4 +1,4 @@
-package tn.spring.campproject.sywar.Repositories;
+package tn.spring.campproject.Repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
