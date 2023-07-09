@@ -23,7 +23,7 @@ public class Espace {
     @Enumerated(EnumType.STRING)
     Type nature;
     @ManyToMany(cascade = CascadeType.ALL)
-    private Set<Activités> ListActivites;
+    private Set<Activite> ListActivites;
     @OneToMany
     public Set<Reclamation> ListReclamation;
     @OneToMany(mappedBy = "Espace")

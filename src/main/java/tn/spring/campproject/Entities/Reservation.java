@@ -27,5 +27,5 @@ public class Reservation {
     @ManyToOne(cascade = CascadeType.ALL)
     Personne personne;
     @ManyToOne
-    Activités Activite;
+    tn.spring.campproject.Entities.Activite Activite;
 }

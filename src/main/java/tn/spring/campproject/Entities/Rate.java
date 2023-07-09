@@ -1,7 +1,7 @@
 package tn.spring.campproject.Entities;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
-import tn.spring.campproject.Entities.Activités;
+
 import javax.persistence.*;
 import java.util.Date;
 @Getter
@@ -22,7 +22,7 @@ public class Rate {
     Date DateRating;
 
     @ManyToOne
-    Activités Activite;
+    tn.spring.campproject.Entities.Activite Activite;
 }
 
 

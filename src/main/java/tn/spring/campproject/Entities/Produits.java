@@ -19,12 +19,14 @@ public class Produits {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int IdProduit;
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private String image;
+    String libelle;
 
-    String Libelle;
+    String code;
 
-    String Code;
-
-    Float Prix;
+    Float prix;
     Date DateCreation;
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Commande> ListCommandes;
