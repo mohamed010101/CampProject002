@@ -19,18 +19,18 @@ public class Sujet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
 
-    int IdSujet;
+            int IdSujet;
 
     String Titre;
     String Contenu;
 
     Date DateCreationSujet;
 
-    String CreerPar;
+        String CreerPar;
 
     Date DateValidation;
 
-    String ValideePar;
+        String ValideePar;
 
     @ManyToMany(mappedBy="ListSujets" , cascade = CascadeType.ALL)
     private Set<Personne> ListPersonnes;

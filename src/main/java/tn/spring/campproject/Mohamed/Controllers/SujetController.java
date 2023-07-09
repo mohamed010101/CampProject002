@@ -20,4 +20,14 @@ public class SujetController {
     @PostMapping("add")
     @ResponseBody
     public Sujet addSujet(@RequestBody Sujet s) {return sujetServices.addSujet(s);}
+
+
+    @DeleteMapping("/deleteSujet/{id}")
+    public void deleteSujet(@PathVariable Integer id){
+        sujetServices.deleteSujet(id);
+    }
+
+
+
+
 }
