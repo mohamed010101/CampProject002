@@ -15,13 +15,13 @@ import java.util.Set;
 public class Espace {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    int IdEspace;
+    Long idEspace;
 
-    String Nom;
+    String nom;
 
-    String Adresse;
-
-    Type Nature;
+    String adresse;
+    @Enumerated(EnumType.STRING)
+    Type nature;
     @ManyToMany(cascade = CascadeType.ALL)
     private Set<Activite> ListActivites;
     @OneToMany
