@@ -2,9 +2,13 @@ package tn.spring.campproject.Wiem.Services;
 
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 import tn.spring.campproject.Entities.Espace;
 import tn.spring.campproject.Wiem.Repositories.IEspaceRepo;
 
+import java.io.IOException;
+import java.util.Base64;
 import java.util.List;
 
 @AllArgsConstructor
@@ -18,8 +22,18 @@ public class EspaceService implements IEspaceService{
     }
 
     @Override
-    public Espace addEspace(Espace e) {
-        return espaceRepo.save(e);
+    public Espace addEspace(MultipartFile file, Espace espace) {
+        String fileName = StringUtils.cleanPath(file.getOriginalFilename());
+        if(fileName.contains(".."))
+        {
+            System.out.println("not a a valid file");
+        }
+        try {
+            espace.setImage(Base64.getEncoder().encodeToString(file.getBytes()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return espaceRepo.save(espace);
     }
 
     @Override

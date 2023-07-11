@@ -17,6 +17,10 @@ public class Espace {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long idEspace;
 
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
+    private String image;
+
     String nom;
 
     String adresse;
